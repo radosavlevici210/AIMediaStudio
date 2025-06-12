@@ -9,6 +9,7 @@ export default function NavigationTabs({ activeTab, onTabChange }: NavigationTab
     { id: "music", label: "Music Lab", icon: "fas fa-music" },
     { id: "video", label: "Video Generator", icon: "fas fa-video" },
     { id: "learning", label: "AI Learning", icon: "fas fa-brain" },
+    { id: "media", label: "Media Library", icon: "fas fa-folder-open" },
     { id: "wallet", label: "Royalty Wallet", icon: "fas fa-wallet" },
     { id: "export", label: "Export Suite", icon: "fas fa-download" }
   ];

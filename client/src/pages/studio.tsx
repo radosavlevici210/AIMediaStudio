@@ -5,6 +5,7 @@ import ScriptStudio from "@/components/studio/ScriptStudio";
 import MusicLab from "@/components/studio/MusicLab";
 import VideoGenerator from "@/components/studio/VideoGenerator";
 import YouTubeLearning from "@/components/studio/YouTubeLearning";
+import MediaLibrary from "@/components/studio/MediaLibrary";
 import RoyaltyWallet from "@/components/studio/RoyaltyWallet";
 import ExportSuite from "@/components/studio/ExportSuite";
 import LoadingOverlay from "@/components/studio/LoadingOverlay";
@@ -81,6 +82,8 @@ export default function Studio() {
         )}
         
         {activeTab === "learning" && <YouTubeLearning />}
+        
+        {activeTab === "media" && <MediaLibrary />}
         
         {activeTab === "wallet" && <RoyaltyWallet />}
         

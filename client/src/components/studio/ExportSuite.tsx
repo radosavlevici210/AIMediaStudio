@@ -1,3 +1,5 @@
+import DeploymentCenter from "@/components/studio/DeploymentCenter";
+
 interface ExportSuiteProps {
   onStartExport: () => void;
   exportProgress?: any;
@@ -199,6 +201,8 @@ export default function ExportSuite({ onStartExport, exportProgress }: ExportSui
           </div>
         </div>
       </div>
+      
+      <DeploymentCenter />
     </div>
   );
 }
