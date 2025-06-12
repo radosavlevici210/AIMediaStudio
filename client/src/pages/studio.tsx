@@ -16,6 +16,7 @@ import DeploymentCenter from "../components/studio/DeploymentCenter";
 import ProductionQueue from "../components/studio/ProductionQueue";
 import LiveStreaming from "../components/studio/LiveStreaming";
 import AIModelManager from "../components/studio/AIModelManager";
+import ProductionDashboard from "../components/studio/ProductionDashboard";
 
 export default function Studio() {
   const [activeTab, setActiveTab] = useState("script");
