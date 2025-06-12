@@ -12,10 +12,11 @@ import ExportSuite from "@/components/studio/ExportSuite";
 import LoadingOverlay from "@/components/studio/LoadingOverlay";
 import CopyrightFooter from "@/components/studio/CopyrightFooter";
 import { useStudio } from "@/hooks/useStudio";
-import { DeploymentCenter } from "../components/studio/DeploymentCenter";
+import DeploymentCenter from "../components/studio/DeploymentCenter";
 import ProductionQueue from "../components/studio/ProductionQueue";
 import LiveStreaming from "../components/studio/LiveStreaming";
 import AIModelManager from "../components/studio/AIModelManager";
+import ProductionDashboard from "../components/studio/ProductionDashboard";
 
 export default function Studio() {
   const [activeTab, setActiveTab] = useState("script");
@@ -80,6 +81,8 @@ export default function Studio() {
       <div className="max-w-7xl mx-auto p-6">
         <MainHeader />
         <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
+
+        {activeTab === "dashboard" && <ProductionDashboard />}
 
         {activeTab === "script" && (
           <ScriptStudio 
