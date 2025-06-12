@@ -12,11 +12,6 @@ import ExportSuite from "@/components/studio/ExportSuite";
 import LoadingOverlay from "@/components/studio/LoadingOverlay";
 import CopyrightFooter from "@/components/studio/CopyrightFooter";
 import { useStudio } from "@/hooks/useStudio";
-import DeploymentCenter from "../components/studio/DeploymentCenter";
-import ProductionQueue from "../components/studio/ProductionQueue";
-import LiveStreaming from "../components/studio/LiveStreaming";
-import AIModelManager from "../components/studio/AIModelManager";
-import VoiceStudio from "../components/studio/VoiceStudio";
 
 export default function Studio() {
   const [activeTab, setActiveTab] = useState("script");
@@ -33,22 +28,6 @@ export default function Studio() {
     generateVideo,
     startExport
   } = useStudio();
-
-  const tabs = [
-    { id: 'dashboard', label: 'Dashboard', icon: 'fas fa-tachometer-alt' },
-    { id: 'script', label: 'Script Studio', icon: 'fas fa-file-alt' },
-    { id: 'video', label: 'Video Generator', icon: 'fas fa-video' },
-    { id: 'music', label: 'Music Lab', icon: 'fas fa-music' },
-    { id: 'voice', label: 'Voice Studio', icon: 'fas fa-microphone' },
-    { id: 'learning', label: 'YouTube Learning', icon: 'fas fa-graduation-cap' },
-    { id: 'media', label: 'Media Library', icon: 'fas fa-folder' },
-    { id: 'queue', label: 'Production Queue', icon: 'fas fa-tasks' },
-    { id: 'streaming', label: 'Live Streaming', icon: 'fas fa-broadcast-tower' },
-    { id: 'models', label: 'AI Models', icon: 'fas fa-brain' },
-    { id: 'wallet', label: 'Royalty Wallet', icon: 'fas fa-wallet' },
-    { id: 'export', label: 'Export Suite', icon: 'fas fa-download' },
-    { id: 'deploy', label: 'Deploy', icon: 'fas fa-rocket' }
-  ];
 
   return (
     <div className="min-h-screen text-white font-sans">
@@ -81,46 +60,42 @@ export default function Studio() {
       <div className="max-w-7xl mx-auto p-6">
         <MainHeader />
         <NavigationTabs activeTab={activeTab} onTabChange={setActiveTab} />
-
-        {activeTab === "dashboard" && <ProductionDashboard />}
-
+        
         {activeTab === "script" && (
           <ScriptStudio 
             onGenerate={generateScript}
             output={scriptOutput}
           />
         )}
-
+        
         {activeTab === "music" && (
           <MusicLab 
             onGenerate={generateMusic}
             output={musicOutput}
           />
         )}
-
+        
         {activeTab === "video" && (
           <VideoGenerator 
             onGenerate={generateVideo}
             output={videoOutput}
           />
         )}
-
-        {activeTab === "voice" && <VoiceStudio />}
-
+        
         {activeTab === "learning" && <YouTubeLearning />}
-
+        
         {activeTab === "media" && <MediaLibrary />}
-        {activeTab === 'queue' && <ProductionQueue />}
-        {activeTab === 'streaming' && <LiveStreaming />}
-        {activeTab === 'models' && <AIModelManager />}
+        
         {activeTab === "wallet" && <RoyaltyWallet />}
+        
+        {activeTab === "dashboard" && <ProductionDashboard />}
+        
         {activeTab === "export" && (
           <ExportSuite 
             onStartExport={startExport}
             exportProgress={exportProgress}
           />
         )}
-        {activeTab === "deploy" && <DeploymentCenter />}
       </div>
 
       <CopyrightFooter />

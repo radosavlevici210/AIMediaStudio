@@ -98,7 +98,7 @@ export default function ProductionDashboard() {
           <h3 className="text-xl font-bold text-[--electric-blue] mb-4 flex items-center">
             <i className="fas fa-stream mr-3"></i>Live Activity Feed
           </h3>
-
+          
           <div className="space-y-3">
             {recentActivity.map((activity) => (
               <div key={activity.id} className="flex items-center justify-between bg-black/20 rounded-xl p-3 border border-white/10">
@@ -131,7 +131,7 @@ export default function ProductionDashboard() {
           <h3 className="text-xl font-bold text-[--hot-pink] mb-4 flex items-center">
             <i className="fas fa-chart-line mr-3"></i>Performance Metrics
           </h3>
-
+          
           <div className="space-y-4">
             <div className="bg-black/20 rounded-xl p-4">
               <div className="flex justify-between items-center mb-2">
@@ -166,38 +166,12 @@ export default function ProductionDashboard() {
         </div>
       </div>
 
-      {/* Usage Statistics */}
-      <div className="glass-card rounded-2xl p-6">
-        <h3 className="text-xl font-bold text-[--electric-blue] mb-4 flex items-center">
-          <i className="fas fa-chart-bar mr-3"></i>Usage Statistics
-        </h3>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[--neon-green]">{productionStats.usage.scriptsGenerated}</div>
-            <div className="text-sm text-gray-400">Scripts Generated</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[--electric-blue]">{productionStats.usage.tracksComposed}</div>
-            <div className="text-sm text-gray-400">Tracks Composed</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[--hot-pink]">{productionStats.usage.videosRendered}</div>
-            <div className="text-sm text-gray-400">Videos Rendered</div>
-          </div>
-          <div className="text-center">
-            <div className="text-3xl font-bold text-[--bright-orange]">{productionStats.usage.deploymentsActive}</div>
-            <div className="text-sm text-gray-400">Active Deployments</div>
-          </div>
-        </div>
-      </div>
-
       {/* System Status */}
       <div className="glass-card rounded-2xl p-6">
         <h3 className="text-xl font-bold text-[--bright-orange] mb-4 flex items-center">
           <i className="fas fa-server mr-3"></i>System Status & Health
         </h3>
-
+        
         <div className="grid md:grid-cols-3 gap-4">
           <div className="bg-black/20 rounded-xl p-4 border border-[--neon-green]/30">
             <div className="flex items-center justify-between mb-3">
