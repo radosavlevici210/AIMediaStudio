@@ -205,12 +205,28 @@ Creating brand new forms of art"
           
           {/* Playback Controls */}
           <div className="bg-black/20 rounded-xl p-4 mb-4">
+            <audio 
+              ref={audioRef}
+              src="/sample-audio.mp3"
+              onTimeUpdate={handleTimeUpdate}
+              onLoadedMetadata={handleLoadedMetadata}
+              onEnded={() => setIsPlaying(false)}
+            />
+            
+            <div className="text-center mb-3">
+              <p className="text-sm text-gray-300 mb-1">Sample Track: "Digital Dreams"</p>
+              <p className="text-xs text-gray-400">AI Generated Sample</p>
+            </div>
+            
             <div className="flex items-center justify-center space-x-4 mb-3">
               <button className="w-10 h-10 bg-gradient-to-r from-[--electric-blue] to-[--hot-pink] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                 <i className="fas fa-backward"></i>
               </button>
-              <button className="w-12 h-12 bg-gradient-to-r from-[--neon-green] to-[--electric-blue] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
-                <i className="fas fa-play"></i>
+              <button 
+                onClick={togglePlayback}
+                className="w-12 h-12 bg-gradient-to-r from-[--neon-green] to-[--electric-blue] rounded-full flex items-center justify-center hover:scale-110 transition-transform"
+              >
+                <i className={`fas ${isPlaying ? 'fa-pause' : 'fa-play'}`}></i>
               </button>
               <button className="w-10 h-10 bg-gradient-to-r from-[--electric-blue] to-[--hot-pink] rounded-full flex items-center justify-center hover:scale-110 transition-transform">
                 <i className="fas fa-forward"></i>
@@ -218,11 +234,14 @@ Creating brand new forms of art"
             </div>
             
             <div className="w-full bg-white/10 rounded-full h-2 mb-2">
-              <div className="bg-gradient-to-r from-[--neon-green] to-[--electric-blue] h-2 rounded-full" style={{width: "35%"}}></div>
+              <div 
+                className="bg-gradient-to-r from-[--neon-green] to-[--electric-blue] h-2 rounded-full transition-all duration-300" 
+                style={{width: `${totalDuration > 0 ? (currentTime / totalDuration) * 100 : 0}%`}}
+              ></div>
             </div>
             <div className="flex justify-between text-xs text-gray-400">
-              <span>1:24</span>
-              <span>3:47</span>
+              <span>{formatTime(currentTime)}</span>
+              <span>{formatTime(totalDuration)}</span>
             </div>
           </div>
           

@@ -7,6 +7,7 @@ import VideoGenerator from "@/components/studio/VideoGenerator";
 import YouTubeLearning from "@/components/studio/YouTubeLearning";
 import MediaLibrary from "@/components/studio/MediaLibrary";
 import RoyaltyWallet from "@/components/studio/RoyaltyWallet";
+import ProductionDashboard from "@/components/studio/ProductionDashboard";
 import ExportSuite from "@/components/studio/ExportSuite";
 import LoadingOverlay from "@/components/studio/LoadingOverlay";
 import CopyrightFooter from "@/components/studio/CopyrightFooter";
@@ -86,6 +87,8 @@ export default function Studio() {
         {activeTab === "media" && <MediaLibrary />}
         
         {activeTab === "wallet" && <RoyaltyWallet />}
+        
+        {activeTab === "dashboard" && <ProductionDashboard />}
         
         {activeTab === "export" && (
           <ExportSuite 
