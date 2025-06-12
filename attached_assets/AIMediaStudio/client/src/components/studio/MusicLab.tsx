@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 interface MusicLabProps {
   onGenerate: (data: any) => void;
@@ -12,39 +12,6 @@ export default function MusicLab({ onGenerate, output }: MusicLabProps) {
   const [key, setKey] = useState("C Major");
   const [duration, setDuration] = useState("3:30 minutes");
   const [lyrics, setLyrics] = useState("");
-  const [isPlaying, setIsPlaying] = useState(false);
-  const [currentTime, setCurrentTime] = useState(0);
-  const [totalDuration, setTotalDuration] = useState(0);
-  const audioRef = useRef<HTMLAudioElement>(null);
-
-  const togglePlayback = () => {
-    if (audioRef.current) {
-      if (isPlaying) {
-        audioRef.current.pause();
-      } else {
-        audioRef.current.play();
-      }
-      setIsPlaying(!isPlaying);
-    }
-  };
-
-  const handleTimeUpdate = () => {
-    if (audioRef.current) {
-      setCurrentTime(audioRef.current.currentTime);
-    }
-  };
-
-  const handleLoadedMetadata = () => {
-    if (audioRef.current) {
-      setTotalDuration(audioRef.current.duration);
-    }
-  };
-
-  const formatTime = (time: number) => {
-    const minutes = Math.floor(time / 60);
-    const seconds = Math.floor(time % 60);
-    return `${minutes}:${seconds.toString().padStart(2, '0')}`;
-  };
 
   const handleGenerate = () => {
     onGenerate({ title, genre, bpm, key, duration, lyrics });
