@@ -4,8 +4,11 @@ import NavigationTabs from "@/components/studio/NavigationTabs";
 import ScriptStudio from "@/components/studio/ScriptStudio";
 import MusicLab from "@/components/studio/MusicLab";
 import VideoGenerator from "@/components/studio/VideoGenerator";
+import YouTubeLearning from "@/components/studio/YouTubeLearning";
+import RoyaltyWallet from "@/components/studio/RoyaltyWallet";
 import ExportSuite from "@/components/studio/ExportSuite";
 import LoadingOverlay from "@/components/studio/LoadingOverlay";
+import CopyrightFooter from "@/components/studio/CopyrightFooter";
 import { useStudio } from "@/hooks/useStudio";
 
 export default function Studio() {
@@ -28,7 +31,7 @@ export default function Studio() {
     <div className="min-h-screen text-white font-sans">
       {/* Header Banner */}
       <div className="bg-gradient-to-r from-[--neon-green] via-[--electric-blue] to-[--hot-pink] p-4 text-center text-black font-bold text-lg animate-neon-flicker">
-        <i className="fas fa-bolt"></i> AI PRODUCTION STUDIO PRO - PROFESSIONAL CREATIVE PLATFORM <i className="fas fa-star"></i>
+        <i className="fas fa-crown"></i> AI PRODUCTION STUDIO PRO+ - ENHANCED PROFESSIONAL PLATFORM | OWNER: ERVIN REMUS RADOSAVLEVICI <i className="fas fa-shield-alt"></i>
       </div>
 
       {/* Status Bar */}
@@ -77,6 +80,10 @@ export default function Studio() {
           />
         )}
         
+        {activeTab === "learning" && <YouTubeLearning />}
+        
+        {activeTab === "wallet" && <RoyaltyWallet />}
+        
         {activeTab === "export" && (
           <ExportSuite 
             onStartExport={startExport}
@@ -84,6 +91,8 @@ export default function Studio() {
           />
         )}
       </div>
+
+      <CopyrightFooter />
 
       <LoadingOverlay 
         isVisible={isLoading}
