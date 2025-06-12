@@ -16,6 +16,7 @@ import DeploymentCenter from "../components/studio/DeploymentCenter";
 import ProductionQueue from "../components/studio/ProductionQueue";
 import LiveStreaming from "../components/studio/LiveStreaming";
 import AIModelManager from "../components/studio/AIModelManager";
+import VoiceStudio from "../components/studio/VoiceStudio";
 
 export default function Studio() {
   const [activeTab, setActiveTab] = useState("script");
@@ -103,6 +104,8 @@ export default function Studio() {
             output={videoOutput}
           />
         )}
+
+        {activeTab === "voice" && <VoiceStudio />}
 
         {activeTab === "learning" && <YouTubeLearning />}
 
