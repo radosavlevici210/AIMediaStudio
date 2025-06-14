@@ -6,3 +6,27 @@ channel = "stable-24_05"
 
 [deployment]
 run = ["sh", "-c", "Run"]
+
+[workflows]
+runButton = "Start Repository"
+
+[[workflows.workflow]]
+name = "Start Repository"
+author = 43847013
+mode = "sequential"
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"🔄 Starting AI Movie & Music Studio Repository...\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"✅ Repository restored and ready!\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "echo \"🌐 Access your applications through the main interface\""
+
+[[workflows.workflow.tasks]]
+task = "shell.exec"
+args = "python -m http.server 5000"
