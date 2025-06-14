@@ -1,0 +1,15 @@
+
+User-agent: *
+Allow: /
+
+Sitemap: https://your-domain.netlify.app/sitemap.xml
+
+# Allow all bots to crawl the site
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# Prioritize main pages
+Crawl-delay: 1

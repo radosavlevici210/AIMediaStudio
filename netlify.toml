@@ -34,3 +34,28 @@
   for = "/attached_assets/*"
   [headers.values]
     Cache-Control = "public, max-age=86400"
+
+# Performance optimizations
+[[edge_functions]]
+  function = "edge-cache"
+  path = "/api/*"
+
+# Form handling
+[build.environment]
+  NODE_VERSION = "18"
+
+# Additional redirects for better SEO
+[[redirects]]
+  from = "/studio"
+  to = "/attached_assets/AI%20Movie%20&%20Music%20Studio%20-%20Professional%20Production%20_%20Ervin%20Radosavlevici_1749725645904.html"
+  status = 301
+
+[[redirects]]
+  from = "/production"
+  to = "/attached_assets/AI%20Movie%20&%20Music%20Studio%20-%20READY%20PRODUCTION_1749725645905.html"
+  status = 301
+
+[[redirects]]
+  from = "/generator"
+  to = "/attached_assets/AI%20Music%20&%20Video%20Generator%20-%20Production%20Ready%20_%20Ervin%20Radosavlevici_1749725645906.html"
+  status = 301
