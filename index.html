@@ -4,6 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Professional AI Movie & Music Studio - Create movies, music, and multimedia content with advanced AI tools">
+    <meta name="keywords" content="AI, movie studio, music studio, video generation, audio production">
+    <meta name="author" content="Ervin Remus Radosavlevici">
+    <meta property="og:title" content="AI Movie & Music Studio">
+    <meta property="og:description" content="Professional Production Repository - Create movies and music with AI">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <title>AI Movie & Music Studio - Repository Hub</title>
     <style>
         body {
@@ -18,6 +26,7 @@
             max-width: 1200px;
             margin: 0 auto;
             text-align: center;
+            will-change: transform;
         }
         .header {
             margin-bottom: 40px;
@@ -139,10 +148,66 @@
             </div>
         </div>
 
+        <div style="margin-top: 40px; padding: 20px; background: rgba(0,191,255,0.1); border-radius: 15px; border: 2px solid #00bfff;">
+            <h3 style="color: #00bfff; margin-bottom: 20px;">🚀 Deploy to Netlify</h3>
+            <p style="color: #ccc; margin-bottom: 20px;">Deploy this repository instantly to Netlify for global CDN distribution</p>
+            <a href="https://app.netlify.com/start/deploy?repository=https://github.com/your-username/ai-movie-music-studio" 
+               style="background: linear-gradient(45deg, #00bfff, #00ff88); color: white; padding: 15px 30px; border-radius: 10px; text-decoration: none; display: inline-block; font-weight: bold;">
+                🌐 Deploy to Netlify
+            </a>
+        </div>
+
         <div style="margin-top: 30px; color: #888; font-size: 14px;">
             <p>© 2024 Ervin Remus Radosavlevici - All Rights Reserved</p>
-            <p>Repository Status: ✅ Fully Restored and Operational</p>
+            <p>Repository Status: ✅ Netlify Optimized & Ready</p>
+            <p>Performance: ⚡ Optimized for Global CDN Distribution</p>
         </div>
     </div>
+
+    <script>
+        // Netlify optimization script
+        document.addEventListener('DOMContentLoaded', function() {
+            // Preload critical resources
+            const preloadLinks = [
+                'attached_assets/AI Movie & Music Studio - Professional Production _ Ervin Radosavlevici_1749725645904.html',
+                'attached_assets/AI Movie & Music Studio - READY PRODUCTION_1749725645905.html',
+                'attached_assets/AI Music & Video Generator - Production Ready _ Ervin Radosavlevici_1749725645906.html'
+            ];
+            
+            preloadLinks.forEach(link => {
+                const preload = document.createElement('link');
+                preload.rel = 'prefetch';
+                preload.href = link;
+                document.head.appendChild(preload);
+            });
+
+            // Add loading animation
+            const cards = document.querySelectorAll('.app-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.2}s`;
+                card.style.animation = 'fadeInUp 0.6s ease forwards';
+            });
+        });
+
+        // Add CSS animations
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .app-card {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
